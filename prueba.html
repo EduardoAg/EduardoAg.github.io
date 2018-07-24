@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Regulacion de Voltaje</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="open-iconic.css">
+    <script src="fuente.js"></script> 
+    <script src="bootstrap.js"></script> 
+
+    <style>
+      .bottom-three {
+       margin-top: 2cm;
+      }
+       .input-width{
+        width: 350px
+       }
+       .bg1{
+        background-color: red;
+       }
+       .bg2{
+        background-color: blue;
+       }
+       .cellwidth{
+        width: 166.6px;
+       }
+
+    </style> 
+</head>
+
+<body>
+<div class="container" style="margin-top: 2cm; margin-left: 5cm; margin-right: 2cm">
+  <div class="row align-items-center" style="width: 330px">
+    <div class="col" style="margin-top: 0.3cm">
+      <label class="col-form-label">Numero de Postes</label>
+    </div>
+    <div class="col">
+      <form >
+        <input type="text" class="form-control" placeholder="Valor Numerico" id="numpostes">    
+      </form>
+    </div>
+  </div>
+  <div class="row align-items-center" style="width: 330px">
+    <div class="col" style="margin-top: 0.3cm">
+      <label class="col-form-label">Voltaje base</label>
+    </div>
+    <div class="col">
+      <form>
+        <input type="text" class="form-control" placeholder="Volts" id="voltajebase">    
+      </form>
+    </div>
+  </div>
+  <div class="row align-items-center" style="width: 330px">
+    <div class="col" style="margin-top: 0.3cm">
+      <label class="col-form-label">Material de la linea</label>
+    </div>
+    <div class="col">
+      <form>
+        <select class="custom-select" id="materialcable">
+          <option value="1">Aluminio</option>
+          <option value="2">Cobre</option>
+        </select> 
+      </form>
+    </div>
+  </div>
+  <div class="row align-items-center" style="width: 330px">
+    <div class="col" style="margin-top: 0.3cm">
+      <label class="col-form-label">Calibre del cable</label>
+    </div>
+    <div class="col">
+      <select class="custom-select" id="calibrecable">
+        <option value="1">1/0</option>
+        <option value="2">2/0</option>
+        <option value="3">3/0</option>
+        <option value="4">4/0</option>
+      </select>
+    </div>
+  </div>
+  <div class="row align-items-center" style="width: 330px">
+    <div class="col" style="margin-top: 0.3cm">
+      <label class="col-form-label">Temperatura</label>
+    </div>
+    <div class="col">
+      <input class="form-control" placeholder="Temperatura del ambiente en centigrados" id="tempambiente">
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" onclick="tableCreate()" type="button" style="margin-top: 0.5cm; margin-left: 5.2cm">Generar tabla</button>
+<div style="width: 1000px; margin-left: 5cm; margin-top: 1cm" id="containertablaprincipal"></div>
+
+<div class="container" style="margin-top: 2cm; margin-left: 5cm; margin-right: 2cm; width: 700px" id="inputboxes"></div>
+
+
+<button class="btn btn-primary" onclick="tableCreate2()" type="button" style="margin-top: 0.5cm; margin-left: 5.2cm">Generar Ramales</button>
+<div style="width: 1000px; margin-left: 5cm; margin-top: 1cm" id="tablassecundarias"></div>
+<div style="margin-left: 5.2cm; margin-top: 1cm" id="boton-calcular"></div>
+
+
+</body>
+</html>
